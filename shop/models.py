@@ -10,8 +10,8 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-    # def get_absolute_url(self):
-    #     return reverse('shop:categoty_list', args=[self.slug])
+    def get_absolute_url(self):
+        return reverse('shop:category_list', args=[self.slug])
 
     def __str__(self):
         return self.name
@@ -37,6 +37,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('shop:product_detail', args=[self.slug])
     
 
 
